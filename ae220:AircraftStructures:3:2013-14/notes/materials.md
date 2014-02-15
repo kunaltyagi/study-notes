@@ -1,7 +1,5 @@
 #AE 220 : Aircraft Structures
 
-## Formulae
-
 ## Notes
 
 ###Materials
