@@ -1,7 +1,5 @@
 #AE 220 : Aircraft Structures
 
-## Formulae
-
 ## Notes
 
 ###__Monocoqe Structures__
@@ -27,7 +25,7 @@
     * __Bulkhead:__ heavy frame, __covers greater portion__ of the cross-section than a ring
     * __Longeron:__ Heavy __longitudinal stiffener parallel__ to the fuselage
     * __Stringer:__ Small __Longitudinal skin stiffener__, smaller than longeron, parallel to the fuselage
-    
+
 ####Functions
 
 * __Skin__
@@ -42,6 +40,3 @@ vehicle
     * __Divide the skin into smaller panels__ to __increase buckling stresses__
     * Act together __with the skin__ in __resisting axial and hoop stress forces__ caused by __pressurization__
 * __Ribs/Frames/Bulkheads__ _(Transverse members)_
-
-## Other details
-
