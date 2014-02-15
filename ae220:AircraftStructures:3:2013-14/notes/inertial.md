@@ -10,3 +10,7 @@ __Tips__:
 * Total moment applied on object = ( Total force applied * Distance of pt. of application from CG ) + ( Moment of Inertial * angular acc. )
 * Above formulae stand for discrete distribution
 * For continuous distribution, integrate
+
+__Imp__:
+
+* The methods used in Quiz question 2 and Tutorial 1, question 3
