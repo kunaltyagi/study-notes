@@ -12,6 +12,8 @@ $$ \sum{F_x} + ma_x = 0 $$ --> Dynamic Equilibrium Equation
 
 __Load Factor__ ( $$ n_x $$ ): Force acting in some direction minus the gravitational and inertial force in the same direction, whole divided by the weight in the same direction.
 
+$$ n_x = \frac{\sum{F_external}}{w} $$ where F_external is force applies, apart from weight(due to gravity) and inertial force(due to acceleration)
+
 $$ n_x = \frac{a_x}{g} $$
 
 $$ n_y $$ = 1 + $$ \frac{a_y}{g} $$ in presence of gravity in only y direction. Any n can be negative.
