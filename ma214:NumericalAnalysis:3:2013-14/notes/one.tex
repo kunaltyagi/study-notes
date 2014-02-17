@@ -47,6 +47,14 @@
             \item multiplication by a very large number
             \item division by a number very close to zero
         \end{itemize}
+        \item To cure this, try to multiply with denominator/numerator's complement
+        \item \textbf{Error Propagation}
+        \begin{itemize}
+            \item Condition/Sensitivity = max{$\mid \frac{f(x)-f(x^*)}{f(x)}\mid \div \mid \frac{x-x^*}{x} \mid$} for small RE. It is $\approx \mid \frac{f'(x)x}{f(x)}\mid$. The larger the number, the more the function is \textbf{ill-conditioned}
+            \item Instability: Error of one step carries forward in next step and is magnified.
+        \end{itemize}
+        \item \textbf{Indermediate Value Theorem (IVT) for Continuous functions}: For all $f_{min}(x) \le F \le f_{max}(x)$, there exists at least one point c $\in$ [a,b]
+        \item Use it in addition of $f(x_i)$ and in integration, where the sign of multiplicand of f(x) doesn't change \textbf{IMPORTANT}
         \item 
         
     \end{itemize}
