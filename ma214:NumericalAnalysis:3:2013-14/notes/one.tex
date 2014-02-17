@@ -107,7 +107,13 @@
         \] \[
             Error = -\frac{f^{(4)}(\xi)(\frac{h}{2})^2(b-a)}{180}
         \]
-        \item Richardson Extrapolation
+    \end{itemize}
+    \item Richardson Extrapolation: $M = N(h) + k_1h + k_2h^2 + k_3h^3 \ldots$ with unknown $k_i$ and all h as h $\to$ 0\\
+    M $\approx$ N(h) is O(h) approximation. Extrapolation combines O(h) approx. to produce formulae with higher truncation error. To get higher order approx. substitute h as h/2 and remove the next order term.
+    \begin{itemize}
+        \item O(h) approx: M$\approx N_1(h)$, $N_1$(h) = N(h) + kh + $\ldots$
+        \item O($h^2$) approx: M$\approx N_2$(h) = $N_1(\frac{h}{2})+[N_1(\frac{h}{2})-N_1(N)] + kh^2 + \ldots$
+        \item O($h^i$) approx: M$\approx N_i$(h) = $N_{i-1} + \frac{N_{i-1}(h/2) - N_{i-1}(h)}{2^{j-1} - 1}$
     \end{itemize}
     
 \end{itemize}
