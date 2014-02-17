@@ -40,7 +40,7 @@ vehicle
     * __Divide the skin into smaller panels__ to __increase buckling stresses__
     * Act together __with the skin__ in __resisting axial and hoop stress forces__ caused by __pressurization__
 * __Ribs/Frames/Bulkheads__ _(Transverse members)_
-    * __Maintain the cross-sectional shape __of aerodynamic surfaces and fuselage
+    * __Maintain the cross-sectional shape__ of aerodynamic surfaces and fuselage
     * __Transmit concentrated loads__ such as weight or thrust to __a wing or fuselage structure__
     * __Redistribute stresses around structural discontinuities__, such as skin cut-outs
     * __Provide edge restraints__ for skin panels to __increase buckling stress__
