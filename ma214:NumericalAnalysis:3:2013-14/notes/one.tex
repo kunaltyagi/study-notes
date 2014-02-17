@@ -1,0 +1,59 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage[margin=3cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\title{Notes}
+
+% Edit these as appropriate
+\newcommand\course{MA 214}
+\newcommand\semester{autumn 2014}  % <-- current semester
+\newcommand\asgnname{Notes}         % <-- assignment name
+\newcommand\yourname{Kunal Tyagi}  % <-- your name
+\newcommand\login{kunaltyagi}          % <-- your CS login
+
+\newenvironment{answer}[1]{
+  \subsubsection*{%some prelude
+  \asgnname.#1}
+}{\newpage}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\yourname\ (\login)\\\course\ --- \semester}
+\chead{\textbf{\Large MA \asgnname}}
+\rhead{\today}
+\headsep 10pt
+
+\begin{document}
+
+\begin{answer}{1}
+    \begin{itemize}
+        \item $ N = \pm (0.d_0 d_1 \ldots d_n)_\beta \beta^e$, here we have a number N with n significant digits in base $\beta$, with \textbf{exponent} as e and $(0.d_0 d_1 \ldots d_n)_\beta$ as \textbf{mantissa}
+        \item If $x^*$ is approx. for x, then 
+        \begin{itemize}
+            \item $\mid x-x^* \mid$ is \textbf{Absolute Error} (AE)
+            \item $\mid \frac{x-x^*}{x} \mid$ is the \textbf{Relative Error} (RE)
+            \item RE can be approximated if x$\approx x^*$ by $\mid \frac{x-x^*}{x^*} \mid$ since $\frac{\alpha}{1-\alpha} \approx \alpha$ if $\alpha \ll$ 1
+        \end{itemize}
+        \item $x^*$ approximates x to t significant digits if RE is $\le 5 \times 10^{-t}$
+        \item Loss of Significant Digits is caused by 
+        \begin{itemize}
+            \item addition/subtraction of quantities of nearly same value
+            \item multiplication by a very large number
+            \item division by a number very close to zero
+        \end{itemize}
+        \item 
+        
+    \end{itemize}
+\end{answer}
+
+\begin{answer}{2}
+Answer to problem 2 goes here, etc.
+\end{answer}
+
+\end{document}
