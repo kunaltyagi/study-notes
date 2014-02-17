@@ -31,7 +31,7 @@
 
 \begin{document}
 
-\begin{answer}{1}
+\begin{answer}{Introduction}
     \begin{itemize}
         \item $ N = \pm (0.d_0 d_1 \ldots d_n)_\beta \beta^e$, here we have a number N with n significant digits in base $\beta$, with \textbf{exponent} as e and $(0.d_0 d_1 \ldots d_n)_\beta$ as \textbf{mantissa}
         \item If $x^*$ is approx. for x, then 
@@ -50,18 +50,28 @@
         \item To cure this, try to multiply with denominator/numerator's complement
         \item \textbf{Error Propagation}
         \begin{itemize}
-            \item Condition/Sensitivity = max{$\mid \frac{f(x)-f(x^*)}{f(x)}\mid \div \mid \frac{x-x^*}{x} \mid$} for small RE. It is $\approx \mid \frac{f'(x)x}{f(x)}\mid$. The larger the number, the more the function is \textbf{ill-conditioned}
-            \item Instability: Error of one step carries forward in next step and is magnified.
+            \item \textbf{Condition/Sensitivity} = max{$\mid \frac{f(x)-f(x^*)}{f(x)}\mid \div \mid \frac{x-x^*}{x} \mid$} for small RE. It is $\approx \mid \frac{f'(x)x}{f(x)}\mid$. The larger the number, the more the function is \textbf{ill-conditioned}
+            \item \textbf{Instability}: Error of one step carries forward in next step and is magnified. It is the sensitivity of numerical process for calculation of f(x) from x to the inevitable rounding error commited during it.
         \end{itemize}
         \item \textbf{Indermediate Value Theorem (IVT) for Continuous functions}: For all $f_{min}(x) \le F \le f_{max}(x)$, there exists at least one point c $\in$ [a,b]
         \item Use it in addition of $f(x_i)$ and in integration, where the sign of multiplicand of f(x) doesn't change \textbf{IMPORTANT}
-        \item 
+        \item Recap: \textbf{Taylor's Theorem}: \\
+        $f(x) = f(c)+f'(c)(x-c)+\frac{f''(c)}{2}(x-c)^2 + \ldots + \frac{f^{(n)}}{n!}(x-c)^n + R_{n+1}(x)$,\\
+        where, $R_{n+1}(x)=\frac{1}{n!}\int _c^x (x-s)^n f^{(n+1)}(s) ds$
+        \item P(x) of degree n has at most n real roots, and has n Complex roots, where\\
+        \textbf{Power form} of $P(x) = a_0 + a_1x + \ldots + a_nx^n$\\
+        \textbf {Nested Multiplication form} of $P(x) = a_0 + x(a+1 + x(\ldots+x(a_n)))$
+        \item Between $\{\alpha _n\}_{n \ge 1}$ and $\{\beta _n\}_{n \ge 1}$, $\alpha _n$ is Big-Oh $\beta _n$ if $\mid \alpha _n \mid \le \mid k\beta _n \mid \iff \alpha _n = \Theta(\beta _n)$ for some k and all sufficiently large n
+        \item $\alpha _n$ is Little-Oh $\beta _n$ if $lim_{n\to \infty} \frac{\alpha _n}{\beta _n} = 0$
         
     \end{itemize}
 \end{answer}
 
-\begin{answer}{2}
-Answer to problem 2 goes here, etc.
+\begin{answer}{Polynomials}
+\begin{itemize}
+    \item Nested Multiplication form gives less round-off errors than Power form which can also result in loss of significant digits
+    \item Power form also takes more multiplication and addition operations
+\end{itemize}
 \end{answer}
 
 \end{document}
