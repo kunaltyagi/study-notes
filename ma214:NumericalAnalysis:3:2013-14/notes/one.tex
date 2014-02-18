@@ -145,10 +145,19 @@
 \begin{itemize}
     \item To solve Ax=B, we can find $A-{-1}$, which is an expensive process or
     \item \textbf{Gaussian Elimination} O($n^3$): Convert Ax=B to Ux=$\tilde{b}$ by Gaussian elimination, and then solve for \{x\} by back-substitution
-    \item It takes $\frac{n^3-n}{3}$ Addition/Substraction and $\frac{2n^3+3n^2-5n}{6}$ Multiplication/Division Operations to find U
-    \item Solving by back-substitution takes $n^2+n$/2 Multiplication/Division and $n^2-n$/2 Addition/Substraction Operations.
-    \item \textbf{Tridiagonal Matrix}: $a_{ij}$=0 if $\mid i-j \mid$>1. 
-    \item Solving Ax=B for Tridiagonal A takes O(n) steps
+    \begin{itemize}
+        \item It takes $\frac{n^3-n}{3}$ Addition/Substraction and $\frac{2n^3+3n^2-5n}{6}$ Multiplication/Division Operations to find U
+        \item Solving by back-substitution takes $n^2+n$/2 Multiplication/Division and $n^2-n$/2 Addition/Substraction Operations.
+    \end{itemize}
+    \item \textbf{Tridiagonal Matrix}: A is tridaigonal$\iff a_{ij}=0 \forall \mid i-j \mid>1$. Solving Ax=B for x takes O(n) steps
+    \item \textbf{LU factorization}: If A=LU, then Ax=B can be written as L(Ux)=B, and solved in O($n^2$) operations by
+    \begin{align}
+        L\tilde{x} = B\\
+        Ux = \tilde{x}
+    \end{align}
+    \item $\sum _{i \not= j}$
+    \item For strictly diagonally dominant $\left( \mid a_{ii} \mid > \sum _{i \not= j} \mid a_{ij} \mid \forall i\right)$ and Positive definite matrix$( z^TMz > 0 \forall z)$, no row interchange required.
+    \item Strrictly diagonally dominant matrix, A is non-singular$\implies Ax \not= 0 \forall x$
 \end{itemize}
 \end{answer}
 
