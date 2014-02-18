@@ -183,7 +183,8 @@
     Once, P s found, solve (5) first, then (6)
     \item \textbf{Errors in GE}: If any $a_{ij}$ for a row i are very small, close to zero, Large error occur in \{x\} while solving Ax=B\\
     So, multiply the offendin row with a large enough $10^m$ for some integer m
-    \item \textbf{Scaled Partial Pivoting}:
+    \item \textbf{Scaled Partial Pivoting}: Scale factor for row i, $s_i$ = $max_{1\le j\le n} \mid a_{ij} \mid$. $s_i$ > 0, otherwise A is singular.
+    \item \textbf{I am now officially confused}
 \end{itemize}
 \end{answer}
 
