@@ -144,7 +144,7 @@
 \begin{answer}{Linear Equations}
 \begin{itemize}
     \item To solve Ax=B, we can find $A-{-1}$, which is an expensive process or
-    \item \textbf{Gaussian Elimination} O($n^3$): Convert Ax=B to Ux=$\tilde{b}$ by Gaussian elimination, and then solve for \{x\} by back-substitution
+    \item \textbf{Gaussian Elimination}(GE) O($n^3$): Convert Ax=B to Ux=$\tilde{b}$ by Gaussian elimination, and then solve for \{x\} by back-substitution
     \begin{itemize}
         \item It takes $\frac{n^3-n}{3}$ Addition/Substraction and $\frac{2n^3+3n^2-5n}{6}$ Multiplication/Division Operations to find U
         \item Solving by back-substitution takes $n^2+n$/2 Multiplication/Division and $n^2-n$/2 Addition/Substraction Operations.
@@ -162,18 +162,28 @@
     \end{itemize}
     no row interchange required as the matrix A becomes non-singular$\implies Ax \not= 0 \forall x$
     \item LU factorisation is good if Ax=B is required to be solved for many B.
-    \item \textbf{Cholesky's Algorithm}: For a Positive definite n$\times$n matrix, A=$LL^T$ where L is a Lower Triangular matrix. 
+    \item \textbf{Cholesky's Algorithm}: For a Positive definite n$\times$n matrix, A=$LL^T$ where L is a Lower Triangular matrix. To find L, we use forward-substitution in A=L$L^T$
     \begin{itemize}
-        \item To find L, use forward-substitution in A=L$L^T$
         \item So, $l_{11} = \sqrt{a_{11}}$
         \item And $l_{j1} = \frac{A_{j1}}{l_{11}}$ and so on.
         \item In general $l_{ii} = (a_{ii} - \sum _{k=1}^{i-1} l^2_{ik})^{1/2}$ and
         \item $l_{ji} = (a_{ji} - \sum _{k=1}^{i-1} l_{jk}l_{ik})/l_{ii}$
     \end{itemize}
     \item In general, LU factorisation takes O($n^3$/3) operations of both types(multiplication/division and addition/subtraction). Cholesky's $LL^t$ requires only 50\% of them, ie. it is O($n^3$/6). Unforttunately, it is valid only for Positive definite matrix.
-    \item \textbf{Permutation Matrix}: P obtained by rearranging the rows of I
-    \item PA permutes the rows of A. Also $P^{-1}$ exists and is equal to $P^T$
-    \item \textbf{PLU factorization}:
+    \item \textbf{Permutation Matrix}: P obtained by rearranging the rows of I\\
+    PA permutes the rows of A. Also $P^{-1}$ exists and is equal to $P^T$
+    \item \textbf{PLU factorization}: If GE can be dome on A with some row swappings, $\implies$ GE can be done on PA without row changes.
+    \item $\implies$ PA = LU or A = $P^T$LU
+    \begin{align}
+        Ax = B\\
+        (PA)x = PB = b'\\
+        L(Ux) = L\tilde{x} = b'\\
+        Ux = \tilde{x}
+    \end{align}
+    Once, P s found, solve (5) first, then (6)
+    \item \textbf{Errors in GE}: If any $a_{ij}$ for a row i are very small, close to zero, Large error occur in \{x\} while solving Ax=B\\
+    So, multiply the offendin row with a large enough $10^m$ for some integer m
+    \item \textbf{Scaled Partial Pivoting}:
 \end{itemize}
 \end{answer}
 
