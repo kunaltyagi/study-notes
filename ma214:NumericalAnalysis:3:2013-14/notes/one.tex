@@ -93,27 +93,34 @@
 \begin{answer}{Integration, Extrapolation}
 \begin{itemize}
     \item Basic 5-6 methods
-    \item Composite Rules
+    \item \textbf{Composite Rules}
     \begin{itemize}
-        \item Composite Trapezoidal Rule: \\
+        \item \textbf{Composite Trapezoidal Rule}: \\
         \[
-            Formula = T_N = \frac{h}{2} [f(x_0 + 2\sum _{i=1}^{N-1}f(x_i) + f(x_N)]
+            \textbf{Formula} T_N = \frac{h}{2} [f(x_0 + 2\sum _{i=1}^{N-1}f(x_i) + f(x_N)]
         \] \[
-            Error = -\frac{f''(\xi)h^2(b-a)}{12}
+            \textbf{Error} = -\frac{f''(\xi)h^2(b-a)}{12}
         \]
-        \item Composite Simpson's Rule: \\
+        \item \textbf{Composite Simpson's Rule}: \\
         \[
-            Formula = T_N = \frac{h}{6} [f(x_0 + 2\sum _{i=1}^{N-1}f(x_i) + 4\sum _{i=1}^N f(x_{i-1}+h/2) +f(x_N)]
+            \textbf{Formula}  T_N = \frac{h}{6} [f(x_0 + 2\sum _{i=1}^{N-1}f(x_i) + 4\sum _{i=1}^N f(x_{i-1}+h/2) +f(x_N)]
         \] \[
-            Error = -\frac{f^{(4)}(\xi)(\frac{h}{2})^2(b-a)}{180}
+            \textbf{Error} = -\frac{f^{(4)}(\xi)(\frac{h}{2})^2(b-a)}{180}
         \]
     \end{itemize}
-    \item Richardson Extrapolation: $M = N(h) + k_1h + k_2h^2 + k_3h^3 \ldots$ with unknown $k_i$ and all h as h $\to$ 0\\
+    \item \textbf{Richardson Extrapolation}: $M = N(h) + k_1h + k_2h^2 + k_3h^3 \ldots$ with unknown $k_i$ and all h as h $\to$ 0\\
     M $\approx$ N(h) is O(h) approximation. Extrapolation combines O(h) approx. to produce formulae with higher truncation error. To get higher order approx. substitute h as h/2 and remove the next order term.
     \begin{itemize}
         \item O(h) approx: M$\approx N_1(h)$, $N_1$(h) = N(h) + kh + $\ldots$
         \item O($h^2$) approx: M$\approx N_2$(h) = $N_1(\frac{h}{2})+[N_1(\frac{h}{2})-N_1(N)] + kh^2 + \ldots$
-        \item O($h^i$) approx: M$\approx N_i$(h) = $N_{i-1} + \frac{N_{i-1}(h/2) - N_{i-1}(h)}{2^{j-1} - 1}$
+        \item O($h^i$) approx: M$\approx N_i$(h) = $N_{i-1}(\frac{h}{2}) + \frac{N_{i-1}(h/2) - N_{i-1}(h)}{2^{j-1} - 1}$
+        \item O($h^{2i}$) approx: M$\approx N_i$(h) = $N_{i-1}(\frac{h}{2}) + \frac{N_{i-1}(h/2) - N_{i-1}(h)}{4^{j-1} - 1}$
+    \end{itemize}
+    \item \textbf{Romberg Integration}:
+    \begin{itemize}
+        \item For even N in Composite Trapezoidal rule, $T_N = \frac{T_{N/2}}{2} + h\sum _{i=1}^{N/2} f(a+(2i-1)h)$
+        \item $O(h^{2m+2}$ approx. is $T_N^m = T_N^{m-1} + \frac{T_N^{m-1} - T^{m-1}_{N/2}}{4m -1}$
+        \item For $T_M^m$ to be defined, $N/2^m$ has to be an integer
     \end{itemize}
     
 \end{itemize}
