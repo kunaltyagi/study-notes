@@ -143,7 +143,12 @@
 
 \begin{answer}{Linear Equations}
 \begin{itemize}
-    \item Hi
+    \item To solve Ax=B, we can find $A-{-1}$, which is an expensive process or
+    \item \textbf{Gaussian Elimination} O($n^3$): Convert Ax=B to Ux=$\tilde{b}$ by Gaussian elimination, and then solve for \{x\} by back-substitution
+    \item It takes $\frac{n^3-n}{3}$ Addition/Substraction and $\frac{2n^3+3n^2-5n}{6}$ Multiplication/Division Operations to find U
+    \item Solving by back-substitution takes $n^2+n$/2 Multiplication/Division and $n^2-n$/2 Addition/Substraction Operations.
+    \item \textbf{Tridiagonal Matrix}: $a_{ij}$=0 if $\mid i-j \mid$>1. 
+    \item Solving Ax=B for Tridiagonal A takes O(n) steps
 \end{itemize}
 \end{answer}
 
