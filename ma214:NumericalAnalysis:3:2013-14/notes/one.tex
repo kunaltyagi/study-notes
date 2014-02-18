@@ -155,9 +155,25 @@
         L\tilde{x} = B\\
         Ux = \tilde{x}
     \end{align}
-    \item $\sum _{i \not= j}$
-    \item For strictly diagonally dominant $\left( \mid a_{ii} \mid > \sum _{i \not= j} \mid a_{ij} \mid \forall i\right)$ and Positive definite matrix$( z^TMz > 0 \forall z)$, no row interchange required.
-    \item Strrictly diagonally dominant matrix, A is non-singular$\implies Ax \not= 0 \forall x$
+    \item For 
+    \begin{itemize}
+        \item \textbf{Strictly Diagonally Dominant} $\left( \mid a_{ii} \mid > \sum _{i \not= j} \mid a_{ij} \mid \forall i\right)$ and 
+        \item \textbf{Positive Definite Matrix}$( z^TMz > 0 \forall z)$
+    \end{itemize}
+    no row interchange required as the matrix A becomes non-singular$\implies Ax \not= 0 \forall x$
+    \item LU factorisation is good if Ax=B is required to be solved for many B.
+    \item \textbf{Cholesky's Algorithm}: For a Positive definite n$\times$n matrix, A=$LL^T$ where L is a Lower Triangular matrix. 
+    \begin{itemize}
+        \item To find L, use forward-substitution in A=L$L^T$
+        \item So, $l_{11} = \sqrt{a_{11}}$
+        \item And $l_{j1} = \frac{A_{j1}}{l_{11}}$ and so on.
+        \item In general $l_{ii} = (a_{ii} - \sum _{k=1}^{i-1} l^2_{ik})^{1/2}$ and
+        \item $l_{ji} = (a_{ji} - \sum _{k=1}^{i-1} l_{jk}l_{ik})/l_{ii}$
+    \end{itemize}
+    \item In general, LU factorisation takes O($n^3$/3) operations of both types(multiplication/division and addition/subtraction). Cholesky's $LL^t$ requires only 50\% of them, ie. it is O($n^3$/6). Unforttunately, it is valid only for Positive definite matrix.
+    \item \textbf{Permutation Matrix}: P obtained by rearranging the rows of I
+    \item PA permutes the rows of A. Also $P^{-1}$ exists and is equal to $P^T$
+    \item \textbf{PLU factorization}:
 \end{itemize}
 \end{answer}
 
