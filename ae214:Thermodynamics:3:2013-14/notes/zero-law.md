@@ -6,35 +6,57 @@
 
 ## Notes
 
-### Zeroth Law of Thermodynamics
+### Specific Heat
 
-If two bodies are in thermal equilibrium with a third body, they are also in thermal equilibrium with each other.
+Amount of energy required to raise the temperature of unit mass of different substances by one degree
 
-By replacing the third body with a thermometer, the law can be restated as two bodies are in thermal equilibrium if both have the same temperature reading even if they are not in contact.
+* Specific heat at constant volume $$c_v$$dT = du at const V
+* Specific heat at constant pressure $$c_p$$dT = dh at const P
 
-### Temperature Scales
+Specific heats are properties of system and for a substance change with temperature.
 
-In thermodynamics, it is desirable to have a temperature scale that is independent of any property of a substance.
+Because at constant pressure the system is allowed to expand and the energy for the expansion must also be supplied, cp > cv
 
-* degree C: 0, 100: freezing, boiling points of water at 1 atm P
-* degree F: 32, 180: same as above. Another 2 point scale
-* K: 0: absolute Zero, by extrapolating curves of ideal behaviour of gases. Measure using constant V thermometers of H or He at low P.
+### NASA Polynomials
 
-T = a + bP, a,b depend on the gas.
+* <Substance> <State><Code> <c1, c2, c3, c4> <T1> <T2> <T3> <line>
+* a1 a2 a3 a4 a5 <line> x3
 
--273.15 K = 0 C, and so on.
+For range T2 to T3, use the first 7 numbers, for range T1 to T2, <<not mentioned>>
 
-1 K = 1/273.16 of Triple point of water
+* Cp/R = a1 + a2 T + a3 T^2 + a4 T^3 + a5 T^4
+* H/RT = a1 + a2 T /2 + a3 T^2 /3 + a4 T^3 /4 + a5 T^4 /5 + a6/T
+* S/R = a1 lnT + a2 T + a3 T^2 /2 + a4 T^3 /3 + a5 T^4 /4 + a7
 
-### Thermometers
+### Energy Transfer
 
-Types of commonly used thermometers:
-* Constant volume gas thermometer , T(P)
-* Constant pressure gas thermometer, T(V)
-* Electric resistance thermometer, T(R)
-* Thermocouple, T(ε)
-* Liquid-in-glass thermometer, T(L)
+#### Heat
 
+The form of energy that is transferred between two systems (or a system and its surroundings) only by virtue of a temperature difference. It is energy in transition, only recognised if it crosses the system boundary.
+
+Larger temperature difference means higher rate of heat transfer. Mechanisms:
+
+1. Conduction, $$ \dot{Q} = \frac{\kappa A\Delta T}{x}$$
+* Convection, $$ \dot{Q} = h A\Delta T$$
+* Radiation, $$ \dot{Q} = \sigma T^4 A$$
+
+
+#### Energy
+
+Any energy interaction of a closed system other than heat is work, ie, An energy interaction that is not caused by a temperature difference between a system and its surroundings is work.
+
+Work is the energy transfer associated with a force acting through a distance.
+
+####Similarities
+
+* Both heat and work are boundary phenomena.Systems possess energy, but not heat or work.
+* Both are associated with a process, not a state. Unlike properties, heat or work has no meaning at a state.
+* Both are path functions (i.e., their magnitudes depend on the path followed during a process as well as the end states)
+
+#### Sign convention
+
+* Heat transfer to a system and work done by a system are positive
+* Heat transfer from a system and work done on a system are negative
 
 
 ## Other details
