@@ -76,5 +76,21 @@ Usually during a process, we allow one of the properties to remain a constant:
 
 ### Energy
 
+* __Macroscopic__: Energy that a system possesses as a whole with respect to some outside reference frame. 
+    * KE $$\frac{mv^2}{2}$$, ke = $$\frac{v^2}{2}$$
+    * PE mgz, pe = gz
+* __Microscopic__:These are related to the molecular structure of a system and the degree of the molecular activity and are independent of the outside reference frames. U(internal E), u(=U/m)
+
+#### Internal Energy
+
+* __Sensible energy__: Part of the internal energy associated with kinetic energy of molecules. Rotational KE, translational KE, vibrational KE
+* __Latent energy__: Internal energy associated with phase change of a system
+* __Chemical energy__: Internal energy associated with the atomic bonds in a molecule
+* __Nuclear energy__: Tremendous amount of energy associated with the strong bonds within the nucleus of the atom
+
+#### Total Energy
+
+E = KE + PE + U
+e = ke + pe + u
 
 ## Other details
