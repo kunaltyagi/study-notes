@@ -1,7 +1,5 @@
 # AE 214 : Thermodynamics
 
-## Formulae
-
 ## Notes
 
 ### Types of ThermoD
@@ -93,4 +91,9 @@ Usually during a process, we allow one of the properties to remain a constant:
 E = KE + PE + U
 e = ke + pe + u
 
-## Other details
+### Enthalpy
+
+__Heat Content__ (H, h(=H/m)):
+
+* h = p$$\vartheta$$ + u
+* H = PV + U
