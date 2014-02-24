@@ -6,6 +6,7 @@ Notes of any subject I study, divided by course name, code and semester+year
 # Info
 
 * For now, use viewer at [socrates.io][1] in case of any problems
+* For LaTeX files, use [ShareLaTeX][2], or [WriteLaTeX][3]
 
 # Want to contribute?
 
@@ -23,3 +24,5 @@ Notes of any subject I study, divided by course name, code and semester+year
 
 [1]: http://socrates.io
 [github]: http://www.github.com
+[2]: https://www.sharelatex.com?r=f651a9c4&rm=d&rs=b
+[3]: https://www.writelatex.com
