@@ -146,18 +146,14 @@
       \item Zero Net Mass Flux (Synthetic Jet) Actuators
       \end{itemize}
 
-\section{Assumptions}
+\section{Terminology}
 
    The calculations are done considering the following assumptions:
    \begin{enumerate}
 	  \item Energy consumed by the mechanism excludes the energy required 
 	  for feedback or feedforward loops, and includes the energy required
-	  to maintain or change the state of the mechanism.
-	  \item Energy introduced into the flow is calculated considering the
-	  energy of vortices, flow, including energy losses due to turbulence,
-	  viscous friction, or other disturbances like bubble formation.
-	  \item The calculations disregard the change in energy due to heat
-	  flow into or out of the mechanism and/or the flow.
+	  to maintain and bring a change in the flow status.
+	  \item 
    \end{enumerate}
 
 \begin{comment}
