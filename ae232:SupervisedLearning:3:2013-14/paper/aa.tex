@@ -1,5 +1,5 @@
 %                                                                 aa.dem
-% AA vers. 8.2, LaTeX class for Astronomy & Astrophysics
+% AA vers. 8.2, LaTeX class for A&A
 % demonstration file
 %                                                       (c) EDP Sciences
 %-----------------------------------------------------------------------
@@ -115,6 +115,7 @@
 
 \section{Active Flow Control methods}
 
+\begin{comment}
 %                                     Two column figure (place early!)
 %______________________________________________ Gamma_1 (lg rho, lg e)
    \begin{figure*}
@@ -129,20 +130,21 @@
               \label{FigGam}%
     \end{figure*}
 %
-
+\end{comment}
    In this section the methods used by various active flow control
    systems will bew reviewed. Their performance characteristics will
    be rewritten in terms of energy input and consumption so as to
    facilitate easier categorisation and comparison.
 
-   Baker (\cite{baker}) investigates the stability of thin layers in
-   self-gravitating,
-   spherical gas clouds with the following properties:
+   Largely, the methods can be categorised by the following mechanisms:
    \begin{itemize}
-      \item hydrostatic equilibrium,
-      \item thermal equilibrium,
-      \item energy transport by grey radiation diffusion.
-   \end{itemize}
+      \item Cavity Oscillation control
+      \item Transition Control
+      \item Boundary Layer Seperation \& Bubble Generation Control
+      \item "On Demand" Vortex Generators
+      \item Zero Net Mass Flux (Synthetic Jet) Actuators
+      \end{itemize}
+\begin{comment}
    For the one-zone-model Baker obtains necessary conditions
    for dynamical, secular and vibrational (or pulsational)
    stability (Eqs.\ (34a,\,b,\,c) in Baker \cite{baker}). Using Baker's
@@ -361,6 +363,8 @@
 %
 %______________________________________________________________
 
+\end{comment}
+
 \section{Conclusions}
 
    \begin{enumerate}
@@ -382,49 +386,52 @@
          instability than the second He ionization zone
          that drives the Cephe{\"\i}d pulsations.
    \end{enumerate}
-
-\begin{acknowledgements}
-      Part of this work was supported by the German
-      \emph{Deut\-sche For\-schungs\-ge\-mein\-schaft, DFG\/} project
-      number Ts~17/2--1.
-\end{acknowledgements}
+   
+%\begin{acknowledgements}
+%      Part of this work was supported by the German
+%      \emph{Deut\-sche For\-schungs\-ge\-mein\-schaft, DFG\/} project
+%      number Ts~17/2--1.
+%\end{acknowledgements}
 
 
 %-------------------------------------------------------------------
 
 \begin{thebibliography}{}
 
-   \bibitem[2000]{GadElHak} Gad-el-Hak, Mohammed 2000,
-      in Flow Control
+  \bibitem[2000]{GadElHak} Gad-el-Hak, Mohammed 2000,
+    in Flow Control
       
-   \bibitem[2000]{baker} Gad-el-Hak, Mohammed 2000,
-      in Flow Control
+  \bibitem[1990]{langley} L.G. Pack \& R.D. Joshlin,
+   in Overview of Active Flow Control at NASA Langley Research Center
+      
+  \bibitem[2000]{baker} Gad-el-Hak, Mohammed 2000,
+    in Flow Control
 
-   \bibitem[1988]{balluch} Balluch, M. 1988,
-      A\&A, 200, 58
+  \bibitem[1988]{balluch} Balluch, M. 1988,
+    A\&A, 200, 58
 
-   \bibitem[1980]{cox} Cox, J. P. 1980,
-      Theory of Stellar Pulsation
-      (Princeton University Press, Princeton) 165
+  \bibitem[1980]{cox} Cox, J. P. 1980,
+    Theory of Stellar Pulsation
+    (Princeton University Press, Princeton) 165
 
-   \bibitem[1969]{cox69} Cox, A. N.,\& Stewart, J. N. 1969,
-      Academia Nauk, Scientific Information 15, 1
+  \bibitem[1969]{cox69} Cox, A. N.,\& Stewart, J. N. 1969,
+    Academia Nauk, Scientific Information 15, 1
 
-   \bibitem[1980]{mizuno} Mizuno H. 1980,
-      Prog. Theor. Phys., 64, 544
+  \bibitem[1980]{mizuno} Mizuno H. 1980,
+    Prog. Theor. Phys., 64, 544
    
-   \bibitem[1987]{tscharnuter} Tscharnuter W. M. 1987,
-      A\&A, 188, 55
+  \bibitem[1987]{tscharnuter} Tscharnuter W. M. 1987,
+    A\&A, 188, 55
   
-   \bibitem[1992]{terlevich} Terlevich, R. 1992, in ASP Conf. Ser. 31, 
-      Relationships between Active Galactic Nuclei and Starburst Galaxies, 
-      ed. A. V. Filippenko, 13
+  \bibitem[1992]{terlevich} Terlevich, R. 1992, in ASP Conf. Ser. 31, 
+    Relationships between Active Galactic Nuclei and Starburst Galaxies, 
+    ed. A. V. Filippenko, 13
 
-   \bibitem[1980a]{yorke80a} Yorke, H. W. 1980a,
-      A\&A, 86, 286
+  \bibitem[1980a]{yorke80a} Yorke, H. W. 1980a,
+    A\&A, 86, 286
 
-   \bibitem[1997]{zheng} Zheng, W., Davidsen, A. F., Tytler, D. \& Kriss, G. A.
-      1997, preprint
+  \bibitem[1997]{zheng} Zheng, W., Davidsen, A. F., Tytler, D. \& Kriss, G. A.
+    1997, preprint
 \end{thebibliography}
 
 \end{document}
@@ -957,3 +964,4 @@ A & CH & 1 &3638 & 0.002 & $-$2.551 &  &  &  & $-$150 & 150 &  Jorgensen et al. 
 \end{longtable}
 \end{landscape}
 }% End onllongtab
+
