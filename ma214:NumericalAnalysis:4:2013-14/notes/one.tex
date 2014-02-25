@@ -1,0 +1,191 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage[margin=3cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\title{Notes}
+
+% Edit these as appropriate
+\newcommand\course{MA 214}
+\newcommand\semester{autumn 2014}  % <-- current semester
+\newcommand\asgnname{Notes}         % <-- assignment name
+\newcommand\yourname{Kunal Tyagi}  % <-- your name
+\newcommand\login{kunaltyagi}          % <-- your CS login
+
+\newenvironment{answer}[1]{
+  \subsubsection*{%some prelude
+  \asgnname.#1}
+}{\newpage}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\yourname\ (\login)\\\course\ --- \semester}
+\chead{\textbf{\Large MA \asgnname}}
+\rhead{\today}
+\headsep 10pt
+
+\begin{document}
+
+\begin{answer}{Introduction}
+    \begin{itemize}
+        \item $ N = \pm (0.d_0 d_1 \ldots d_n)_\beta \beta^e$, here we have a number N with n significant digits in base $\beta$, with \textbf{exponent} as e and $(0.d_0 d_1 \ldots d_n)_\beta$ as \textbf{mantissa}
+        \item If $x^*$ is approx. for x, then 
+        \begin{itemize}
+            \item $\mid x-x^* \mid$ is \textbf{Absolute Error} (AE)
+            \item $\mid \frac{x-x^*}{x} \mid$ is the \textbf{Relative Error} (RE)
+            \item RE can be approximated if x$\approx x^*$ by $\mid \frac{x-x^*}{x^*} \mid$ since $\frac{\alpha}{1-\alpha} \approx \alpha$ if $\alpha \ll$ 1
+        \end{itemize}
+        \item $x^*$ approximates x to t significant digits if RE is $\le 5 \times 10^{-t}$
+        \item Loss of Significant Digits is caused by 
+        \begin{itemize}
+            \item addition/subtraction of quantities of nearly same value
+            \item multiplication by a very large number
+            \item division by a number very close to zero
+        \end{itemize}
+        \item To cure this, try to multiply with denominator/numerator's complement
+        \item \textbf{Error Propagation}
+        \begin{itemize}
+            \item \textbf{Condition/Sensitivity} = max{$\mid \frac{f(x)-f(x^*)}{f(x)}\mid \div \mid \frac{x-x^*}{x} \mid$} for small RE. It is $\approx \mid \frac{f'(x)x}{f(x)}\mid$. The larger the number, the more the function is \textbf{ill-conditioned}
+            \item \textbf{Instability}: Error of one step carries forward in next step and is magnified. It is the sensitivity of numerical process for calculation of f(x) from x to the inevitable rounding error commited during it.\\
+            The effects can be reduce by considering the rounding off error one at a time
+        \end{itemize}
+        \item \textbf{Indermediate Value Theorem (IVT) for Continuous functions}: For all $f_{min}(x) \le F \le f_{max}(x)$, there exists at least one point c $\in$ [a,b]
+        \item Use it in addition of $f(x_i)$ and in integration, where the sign of multiplicand of f(x) doesn't change \textbf{IMPORTANT}
+        \item Recap: \textbf{Taylor's Theorem}: \\
+        $f(x) = f(c)+f'(c)(x-c)+\frac{f''(c)}{2}(x-c)^2 + \ldots + \frac{f^{(n)}}{n!}(x-c)^n + R_{n+1}(x)$,\\
+        where, $R_{n+1}(x)=\frac{1}{n!}\int _c^x (x-s)^n f^{(n+1)}(s) ds$
+        \item Between $\{\alpha _n\}_{n \ge 1}$ and $\{\beta _n\}_{n \ge 1}$, $\alpha _n$ is Big-Oh $\beta _n$ if $\mid \alpha _n \mid \le \mid k\beta _n \mid \iff \alpha _n = \Theta(\beta _n)$ for some k and all sufficiently large n
+        \item $\alpha _n$ is Little-Oh $\beta _n$ if $lim_{n\to \infty} \frac{\alpha _n}{\beta _n} = 0$
+        
+    \end{itemize}
+\end{answer}
+
+\begin{answer}{Polynomials, Intrapolation}
+\begin{itemize}
+    \item P(x) of degree n has at most n real roots, and has n Complex roots.
+    \begin{itemize}
+        \item \textbf{Power form}: $P(x) = a_0 + a_1x + \ldots + a_nx^n$
+        \item \textbf {Nested Multiplication form}: $P(x) = a_0 + (x-c)(a_1+ (x-c)(\ldots+(x-c)(a_n)))$
+    \end{itemize}
+    \item Nested Multiplication form gives less round-off errors than Power form which can also result in loss of significant digits
+    \item Power form also takes more multiplication and addition operations
+    \item \textbf {Interpolation}
+    \begin{itemize}
+        \item \textbf{Weierstrass Approximaition}: if f(x) is continuous, for any $\epsilon$>0, there is a polynomial P(x) such that $\mid f(x)-P(x)\mid <\epsilon$ for all x in [a,b]
+        \item Taylor Polynomial
+        \item Lagrange Polynomial
+        \item Newton's Piecewise Interpolation
+        \item Cubic Spline
+        \begin{itemize}
+            \item Clamped boundary
+            \item Free boundary
+        \end{itemize}
+        \item Natural Cubic Spline
+    \end{itemize}
+\end{itemize}
+\end{answer}
+
+\begin{answer}{Integration, Extrapolation}
+\begin{itemize}
+    \item Basic 5-6 methods
+    \item \textbf{Composite Rules}
+    \begin{itemize}
+        \item \textbf{Composite Trapezoidal Rule}: \\
+        \[
+            \textbf{Formula} T_N = \frac{h}{2} [f(x_0 + 2\sum _{i=1}^{N-1}f(x_i) + f(x_N)]
+        \] \[
+            \textbf{Error} = -\frac{f''(\xi)h^2(b-a)}{12}
+        \]
+        \item \textbf{Composite Simpson's Rule}: \\
+        \[
+            \textbf{Formula}  T_N = \frac{h}{6} [f(x_0 + 2\sum _{i=1}^{N-1}f(x_i) + 4\sum _{i=1}^N f(x_{i-1}+h/2) +f(x_N)]
+        \] \[
+            \textbf{Error} = -\frac{f^{(4)}(\xi)(\frac{h}{2})^2(b-a)}{180}
+        \]
+    \end{itemize}
+    \item \textbf{Richardson Extrapolation}: $M = N(h) + k_1h + k_2h^2 + k_3h^3 \ldots$ with unknown $k_i$ and all h as h $\to$ 0\\
+    M $\approx$ N(h) is O(h) approximation. Extrapolation combines O(h) approx. to produce formulae with higher truncation error. To get higher order approx. substitute h as h/2 and remove the next order term.
+    \begin{itemize}
+        \item O(h) approx: M$\approx N_1(h)$, $N_1$(h) = N(h) + kh + $\ldots$
+        \item O($h^2$) approx: M$\approx N_2$(h) = $N_1(\frac{h}{2})+[N_1(\frac{h}{2})-N_1(N)] + kh^2 + \ldots$
+        \item O($h^i$) approx: M$\approx N_i$(h) = $N_{i-1}(\frac{h}{2}) + \frac{N_{i-1}(h/2) - N_{i-1}(h)}{2^{j-1} - 1}$
+        \item O($h^{2i}$) approx: M$\approx N_i$(h) = $N_{i-1}(\frac{h}{2}) + \frac{N_{i-1}(h/2) - N_{i-1}(h)}{4^{j-1} - 1}$
+    \end{itemize}
+    \item \textbf{Romberg Integration}:
+    \begin{itemize}
+        \item For even N in Composite Trapezoidal rule, $T_N = \frac{T_{N/2}}{2} + h\sum _{i=1}^{N/2} f(a+(2i-1)h)$
+        \item $O(h^{2m+2}$ approx. is $T_N^m = T_N^{m-1} + \frac{T_N^{m-1} - T^{m-1}_{N/2}}{4m -1}$
+        \item For $T_M^m$ to be defined, $N/2^m$ has to be an integer
+    \end{itemize}
+    
+\end{itemize}
+\end{answer}
+
+\begin{answer}{Numerical Differentiation}
+\begin{itemize}
+    \item If $f(x) = P_k(x) + f[ x_0, x_1, \ldots, x_k, x ]\Psi_k$(x), where $P_k(x)$ interpolates f(x) at $x_i$ and $\Psi_k(x) = \prod_{i=0}^k(x-x_i)$, then
+    \item f'(x) = $P'_k(x) + f[ x_0, x_1, \ldots, x_k, x, x]\Psi_k(x) + f[ x_0, x_1, \ldots, x_k ]\Psi '_k(x)$
+    \item Error E(f) = $\frac{f^{k+2}(\xi)}{(k+2)!}\Psi_k(a) + \frac{f^{k+1}(\nu)}{(k+1)!}\Psi '_k(a)$ 
+    \item If a =$x_i$ then , first term = 0, since it contains (a-$x_i$)
+    \item If $x_{k-j} - a = a - x_j$, ie. k is odd and a is symmetricall wrt all points, then $\Psi '_k$(a)=0 (since $(x-x_i)(x-x_{k-i})=(x-a)^2-(a-x_i)^2$, which makes the derivative at a Zero)
+    \item 2Point Edge: a is $x_0$ or $x_1$, then f'(a) = f(a+h)-f(a)/h and Error = -hf''(n)/2
+    \item 2Point Central Difference: a=$\frac{x_1-x_0}{2}$, f'(a)=$\frac{f(a+h)-f(a-h)}{2h}$ and Error = -$\frac{h^2}{6}f'''(\xi)$
+    \item 3Point Edge: a is $x_0$, $x_1$, or $x_2$, then f'(a) $\approx \frac{-3f(a)+4f(a+h)-f(a+2h)}{2h}$ and Error = $-\frac{h^2}{3}f''(\xi)$
+    \item 3Point Central Diff: a=$x_1$ and f''(a)$\approx \frac{f(a-h)-2f(a)+f(a+h)}{h^2}$ and Error = $-\frac{h^2}{12}f^{(4)}(\xi)$
+    \item To reduce Error, use Taylor expansion of f(a+h) and f(a-h) around a to get f'(a)
+\end{itemize}
+\end{answer}
+
+\begin{answer}{Linear Equations}
+\begin{itemize}
+    \item To solve Ax=B, we can find $A-{-1}$, which is an expensive process or
+    \item \textbf{Gaussian Elimination}(GE) O($n^3$): Convert Ax=B to Ux=$\tilde{b}$ by Gaussian elimination, and then solve for \{x\} by back-substitution
+    \begin{itemize}
+        \item It takes $\frac{n^3-n}{3}$ Addition/Substraction and $\frac{2n^3+3n^2-5n}{6}$ Multiplication/Division Operations to find U
+        \item Solving by back-substitution takes $n^2+n$/2 Multiplication/Division and $n^2-n$/2 Addition/Substraction Operations.
+    \end{itemize}
+    \item \textbf{Tridiagonal Matrix}: A is tridaigonal$\iff a_{ij}=0 \forall \mid i-j \mid>1$. Solving Ax=B for x takes O(n) steps
+    \item \textbf{LU factorization}: If A=LU, then Ax=B can be written as L(Ux)=B, and solved in O($n^2$) operations by
+    \begin{align}
+        L\tilde{x} = B\\
+        Ux = \tilde{x}
+    \end{align}
+    \item For 
+    \begin{itemize}
+        \item \textbf{Strictly Diagonally Dominant} $\left( \mid a_{ii} \mid > \sum _{i \not= j} \mid a_{ij} \mid \forall i\right)$ and 
+        \item \textbf{Positive Definite Matrix}$( z^TMz > 0 \forall z)$
+    \end{itemize}
+    no row interchange required as the matrix A becomes non-singular$\implies Ax \not= 0 \forall x$
+    \item LU factorisation is good if Ax=B is required to be solved for many B.
+    \item \textbf{Cholesky's Algorithm}: For a Positive definite n$\times$n matrix, A=$LL^T$ where L is a Lower Triangular matrix. To find L, we use forward-substitution in A=L$L^T$
+    \begin{itemize}
+        \item So, $l_{11} = \sqrt{a_{11}}$
+        \item And $l_{j1} = \frac{A_{j1}}{l_{11}}$ and so on.
+        \item In general $l_{ii} = (a_{ii} - \sum _{k=1}^{i-1} l^2_{ik})^{1/2}$ and
+        \item $l_{ji} = (a_{ji} - \sum _{k=1}^{i-1} l_{jk}l_{ik})/l_{ii}$
+    \end{itemize}
+    \item In general, LU factorisation takes O($n^3$/3) operations of both types(multiplication/division and addition/subtraction). Cholesky's $LL^t$ requires only 50\% of them, ie. it is O($n^3$/6). Unforttunately, it is valid only for Positive definite matrix.
+    \item \textbf{Permutation Matrix}: P obtained by rearranging the rows of I\\
+    PA permutes the rows of A. Also $P^{-1}$ exists and is equal to $P^T$
+    \item \textbf{PLU factorization}: If GE can be dome on A with some row swappings, $\implies$ GE can be done on PA without row changes.
+    \item $\implies$ PA = LU or A = $P^T$LU
+    \begin{align}
+        Ax = B\\
+        (PA)x = PB = b'\\
+        L(Ux) = L\tilde{x} = b'\\
+        Ux = \tilde{x}
+    \end{align}
+    Once, P s found, solve (5) first, then (6)
+    \item \textbf{Errors in GE}: If any $a_{ij}$ for a row i are very small, close to zero, Large error occur in \{x\} while solving Ax=B\\
+    So, multiply the offendin row with a large enough $10^m$ for some integer m
+    \item \textbf{Scaled Partial Pivoting}: Scale factor for row i, $s_i$ = $max_{1\le j\le n} \mid a_{ij} \mid$. $s_i$ > 0, otherwise A is singular.
+    \item \textbf{I am now officially confused}
+\end{itemize}
+\end{answer}
+
+\end{document}

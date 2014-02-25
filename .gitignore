@@ -3,6 +3,8 @@
 *.alg
 *.aux
 *.bbl
+*.bkp
+*.backup
 *.blg
 *.dvi
 *.fdb_latexmk
@@ -16,6 +18,7 @@
 *.lof
 *.log
 *.lot
+*.llt
 *.maf
 *.mtc
 *.mtc0
