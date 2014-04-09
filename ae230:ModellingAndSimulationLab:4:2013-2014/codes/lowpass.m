@@ -1,3 +1,11 @@
+%% AUTHOR @ 2014
+% Kunal Tyagi
+%% Usage
+% Works well in MATLAB 2013a
+%% TODO
+% Sanity checks
+
+%% CODE
 function [X] = lowpass(Y, M)
     n = size(Y,1);
     X = zeros(n,1);

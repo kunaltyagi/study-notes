@@ -1,3 +1,11 @@
+%% AUTHOR @ 2014
+% Kunal Tyagi
+%% Usage
+% Works well in MATLAB 2013a
+%% TODO
+% Sanity checks
+
+%% CODE
 function [gain] = findGain(X, Y, init_offset, final_offset, sample_size)
     n_x = size(Y,1);
     min_x = findMin(X, init_offset, init_offset+sample_size);

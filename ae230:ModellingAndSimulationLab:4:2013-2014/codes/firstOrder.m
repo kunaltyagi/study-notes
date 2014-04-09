@@ -1,3 +1,11 @@
+%% AUTHOR @ 2014
+% Kunal Tyagi
+%% Usage
+% Works well in MATLAB 2013a
+%% TODO
+% Sanity checks
+
+%% CODE
 function [gain, time_constant] = firstOrder(X, Y, init_offset, final_offset, step_size, sample_size) % X is input
     time_constant = 0;
     n = size(Y,1);

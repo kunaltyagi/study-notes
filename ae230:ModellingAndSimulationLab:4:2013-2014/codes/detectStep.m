@@ -1,3 +1,11 @@
+%% AUTHOR @ 2014
+% Kunal Tyagi
+%% Usage
+% Works well in MATLAB 2013a
+%% TODO
+% Sanity checks
+
+%% CODE
 function [X] = detectStep(Y, init_offset, final_offset, step)
     X = 0;    
     n = size(Y,1);
