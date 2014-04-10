@@ -28,4 +28,7 @@ function [gain, time_constant] = firstOrder(X, Y, init_offset, final_offset, ste
     if time_constant == 0
         time_constant = n-x;
     end
+    %% HARDCODING for time step
+    % 1 t = 1/10s
+    time_constant = time_constant/10;
 end
