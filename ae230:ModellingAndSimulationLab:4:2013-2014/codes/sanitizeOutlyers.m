@@ -10,9 +10,10 @@ function [X] = sanitizeOutlyers(Y, error_threshold)
     n = size(Y);
     X = zeros(n);
     X(1) = Y(1);
-    for i=2:n
+    X(n) = Y(n);
+    for i=2:n-1
         if X(i-1)+error_threshold>X(i) || X(i-1)-error_threshold<X(i)
-            X(i) = (Y(i-1)+Y(i))/2;
+            X(i) = (Y(i-1)+Y(i+1))/2;
         end
     end
 end
