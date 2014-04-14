@@ -6,7 +6,7 @@
 % Sanity checks
 
 %% CODE
-function [gain, time_constant] = firstOrder(X, Y, init_offset, final_offset, step_size, sample_size) % X is input
+function [gain, time_constant, start_time, init_diff, A, B] = firstOrder(X, Y, init_offset, final_offset, step_size, sample_size) % X is input
     time_constant = 0;
     n = size(Y,1);
     A = lowpass(X, sample_size);
@@ -14,10 +14,13 @@ function [gain, time_constant] = firstOrder(X, Y, init_offset, final_offset, ste
     subplot(2,1,1); plot(1:n, X, 1:n, A);
     subplot(2,1,2); plot(1:n, Y, 1:n, B);
     x = detectStep(A, init_offset, final_offset, step_size);
+    start_time = x;
     gain = findGain(A, B, init_offset, final_offset, sample_size);
+    min_x = findMin(X, init_offset, init_offset+sample_size);
     min_y = findMin(B, init_offset, n-final_offset);
     max_y = findMax(B, init_offset, n-final_offset);
     delta_y = (max_y - min_y)*0.63212;
+    init_diff = min_x - min_y;
     t_value = B(x) + delta_y;
     for i=x:n-final_offset
         if B(i)>t_value
