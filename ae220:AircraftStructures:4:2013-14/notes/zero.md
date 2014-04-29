@@ -12,7 +12,7 @@
 ###__Semi-monocoque Structures__
 
 * __Reinforced__ monocoque to prevent __buckling__ for __fuselage__ and __wing__ design
-* Thin wall shell, with stiffening members
+* Thin wall shell, w1ith stiffening members
 
 ####Members
 
@@ -44,5 +44,5 @@ vehicle
     * __Transmit concentrated loads__ such as weight or thrust to __a wing or fuselage structure__
     * __Redistribute stresses around structural discontinuities__, such as skin cut-outs
     * __Provide edge restraints__ for skin panels to __increase buckling stress__
-    * __Provide end seals for pressurized fuselage__
+    * __Provide end seals for pressurized fuselage__ 
 

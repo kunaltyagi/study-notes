@@ -13,7 +13,7 @@ function [gain, time_constant, start_time, init_diff, A, B] = firstOrder(X, Y, i
     B = lowpass(Y, sample_size);
     subplot(2,1,1); plot(1:n, X, 1:n, A);
     subplot(2,1,2); plot(1:n, Y, 1:n, B);
-    x = detectStep(A, init_offset, final_offset, step_size);
+    x = 225;%detectStep(A, init_offset, final_offset, step_size);
     start_time = x;
     gain = findGain(A, B, init_offset, final_offset, sample_size);
     min_x = findMin(X, init_offset, init_offset+sample_size);
